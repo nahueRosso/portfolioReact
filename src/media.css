@@ -1,0 +1,89 @@
+@media only screen and (min-width: 425px) {
+}
+
+@media only screen and (min-width: 935px) {
+  .imageContent {
+    width: 17em;
+    height: 17em;
+  }
+  .imagen {
+    width: 16em;
+    height: 16em;
+  }
+  .content {
+    right: 10%;
+    top: calc(50% - 12em);
+  }
+  .title {
+    margin-top: 0px;
+    justify-content: end;
+    align-items: start;
+  }
+
+  h1 {
+    padding: 0em;
+    text-align: left;
+    width: 78%;
+    font-size: 4.2em;
+  }
+
+  .info {
+  }
+
+  h2 {
+    text-align: left;
+    padding: 0em;
+    margin-top: 1.2em;
+    line-height: 1.7em;
+    font-size: 1.7em;
+    margin-right: 11em;
+  }
+
+  .container {
+    width: calc(100% - 12em);
+    display: inline-block;
+    margin-left: 3em;
+  }
+  .social {
+    width: 15em;
+    margin-top: -7.5em;
+  }
+
+  .barra {
+    top: calc(50% - 0.75em);
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .App {
+    height: 100vh;
+    width: 1250px;
+    background-color: #18181b;
+    padding: 0;
+    margin-left: calc(50% - 625px);
+  }
+
+  .barra {
+    width: 1250px;
+    left: calc(50% - 625px);
+  }
+
+  .confi {
+    width: 1250px;
+    right: calc(50% - 625px);
+  }
+
+  .container {
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-bottom: 4em;
+  }
+
+  .content {
+    right: calc(50% - 625px + 7em);
+    top: calc(50% - 12em);
+  }
+  /* .social{
+    width: 15em;
+  } */
+}

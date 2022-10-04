@@ -1,0 +1,50 @@
+.imageContent{
+    width: 12em;
+    height: 12em;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.imagen{
+    width:11.1em;
+    height:11.1em;
+    z-index: 10;
+    padding: 0%;
+    border-radius: 50%;
+    border: .3em solid #313136;
+}
+
+.content{
+    z-index: 10;
+    position:absolute;
+    right: calc(50vw - 7em);
+    top: calc(50% - 6em);
+    margin-top: 0em;
+}
+
+@media only screen and (min-width: 935px) {
+    .content{
+        right: 10%;
+        top: calc(50% - 12em);
+        margin-top:2em ;
+    }
+}
+
+@media only screen and (min-height: 680px) {
+     .content{
+        top: calc(50% - 8em);
+        
+         right: calc(50vw - 8.5em);
+     }
+    .imageContent{
+      width: 14em;
+      height: 14em;
+    }
+    .imagen{
+      width: 13.2em;
+      height: 13.2em;
+    }
+  }
