@@ -1,6 +1,6 @@
 import './Technology.css'
 import Potentiometer from './Level'
-import { SiAdobeillustrator, SiAdobephotoshop, SiAdobepremierepro, SiCss3, SiExpress, SiHtml5, SiJavascript, SiMongodb, SiMysql, SiNodedotjs, SiPython, SiReact } from "react-icons/si";
+import { SiAdobeillustrator, SiAdobephotoshop, SiAdobepremierepro, SiAdobexd, SiCss3, SiExpress, SiHtml5, SiJavascript, SiMongodb, SiMysql, SiNodedotjs, SiPython, SiReact } from "react-icons/si";
 
 const Technology = () => {
  let objet;
@@ -46,7 +46,7 @@ if(minor===true){
           <Potentiometer icon={<SiCss3 style={objet}/>} name={'Css'} porcent={90}/>
           <Potentiometer icon={<SiJavascript style={objet}/>} name={'JavaScript'} porcent={90}/>
           <Potentiometer icon={<SiReact style={objet}/>} name={"React"} porcent={90}/>
-          <Potentiometer icon={<SiExpress style={objet}/>} name={'Express'} porcent={85}/>
+          <Potentiometer icon={<SiExpress style={objet}/>} name={'Express JS'} porcent={85}/>
           <Potentiometer icon={<SiNodedotjs style={objet}/>} name={'Node JS'} porcent={85}/>
           <Potentiometer icon={<SiPython style={objet}/>} name={"Python"} porcent={75}/>
           <Potentiometer icon={<SiMysql style={objet}/>} name={'Sql'} porcent={90}/>
@@ -54,6 +54,7 @@ if(minor===true){
           <Potentiometer icon={<SiAdobeillustrator style={objet}/>} name={'Illustrator'} porcent={85}/>
           <Potentiometer icon={<SiAdobephotoshop style={objet}/>} name={'Photoshop'} porcent={90}/>
           <Potentiometer icon={<SiAdobepremierepro style={objet}/>} name={'Premier Pro'} porcent={90}/>
+          <Potentiometer icon={<SiAdobexd style={objet}/>} name={'XD'} porcent={90}/>
         </section>
     </div>
   )
