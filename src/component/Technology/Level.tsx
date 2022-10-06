@@ -1,9 +1,13 @@
-import { useRef } from "react";
 import "./Level.css";
 
 const Level = ({ icon, porcent, name }: any) => {
-  let objet = { width: `calc(45em * 0.${porcent})` };
 
+  let objet;
+
+  if (window.matchMedia("(max-width: 935px)").matches) {
+     objet = { width: `calc(80vw * 0.${porcent})` }
+  }else{ objet = { width: `calc(45em * 0.${porcent})` }}
+  
   return (
     <>
       <div className="conteinerLevel">

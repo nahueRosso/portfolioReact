@@ -1,4 +1,4 @@
-.imgBlack{
+.svgBlack{
     z-index: -1;
     position: absolute;
     width: 1250px;
@@ -22,7 +22,7 @@
     height:500px;
 }
 
-.imgBottom{
+.svgBottom{
     z-index: -1;
     position: absolute;
     width: 1250px;
@@ -31,7 +31,7 @@
     left: calc(50% - 625px);
 }
 
-.container-Abaut div{
+.textAbaut{
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -46,9 +46,55 @@
     margin-bottom: .5em;
 }
 .container-Abaut h4{
-    line-height: 1.8em;
+    line-height: calc(210%);
     font-weight: 300;
     color: #afadad;
     align-self: start;
     font-family: "Rubik", sans-serif; 
+}
+
+@media only screen and (max-width: 935px) {
+    .container-Abaut{
+        position: relative;
+        left:0px;
+        background-color: #000;
+        z-index: -2;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .svgBlack{
+    width: 100vw;
+    left: 0px;
+    }
+    .svgBottom{
+    width: 100vw;
+    left: 0px;
+    
+    top: calc(200vh - 8em);
+
+    }
+
+    .imgAbaut{
+        z-index: -1;
+        position: absolute;
+    }
+
+    .textAbaut{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 20%);
+    }
+
+    .textAbaut h3{
+        
+    align-self: center;
+    }
+
+
 }

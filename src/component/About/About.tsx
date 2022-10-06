@@ -1,7 +1,4 @@
-import React from "react";
 import "./About.css";
-import imgGrey from "../../assets/lienzo-5f5f65.svg";
-import imgBlack from "../../assets/lienzo-18181b.svg";
 import imgAbout from "../../assets/instagram.png";
 import trazo from "../../assets/trazo.svg";
 import trazoBottom from "../../assets/trazo-bottom.svg";
@@ -9,10 +6,10 @@ import trazoBottom from "../../assets/trazo-bottom.svg";
 const About = () => {
   return (
     <>
-      <img className="imgBlack" src={trazo} alt="" />
+      <img className="svgBlack" src={trazo} alt="" />
       <div className="container-Abaut">
         <img className="imgAbaut" src={imgAbout} alt="" />
-        <div>
+        <section className="textAbaut">
           <h3>About Me</h3>
           <h4>
             I am a full stack web developer & designer from Argentina. I
@@ -31,9 +28,9 @@ const About = () => {
             I love traveling and playing music.
             <br />
           </h4>
-        </div>
+        </section>
       </div>
-      <img className="imgBottom" src={trazoBottom} />
+      <img className="svgBottom" src={trazoBottom} />
     </>
   );
 };

@@ -9,6 +9,7 @@ const Home = () => {
 
   return (
     <>
+    <div className="barra" />
     <Foto />
     <section  className="container">
       <div className="title"><h1>Full stack web developer & designe</h1></div>

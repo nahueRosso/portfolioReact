@@ -4,7 +4,7 @@ import App from './App'
 import './index.css'
 import About from './component/About/About'
 import Technology from './component/Technology/Technology'
-import Contact from './component/Contact/Contact'
+import Proyects from './component/Projects/Projects'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -12,6 +12,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
     <About/>
     <Technology/>
-    <Contact/>
+    <Proyects/>
   </React.StrictMode>
 )

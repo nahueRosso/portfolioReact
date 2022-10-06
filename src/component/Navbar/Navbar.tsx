@@ -5,16 +5,7 @@ import { useState, useRef } from "react";
 
 const Navbar = () => {
   const refDeployed: any = useRef();
-  const btnRef: any = useRef();
-  
-  const moon = (
-    <BsMoonStarsFill style={{ color: "#a1a1aa", fontSize: "1.5em" }} />
-  );
-  const sun = <BsSunFill style={{ color: "#a1a1aa", fontSize: "1.5em" }} />;
-
-  const change = () => {};
-
-  const [icon, setIcon] = useState(moon);
+  const btnRef: any = useRef();  
 
   const btnDeployed = () => {
     if (window.matchMedia("(max-width: 935px)").matches) {

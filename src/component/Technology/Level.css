@@ -56,7 +56,40 @@
     opacity: .5;
 }
 
-.aHref{
-    text-decoration: none;
-    cursor: pointer;
-}
+
+@media only screen and (max-width: 935px) {
+    .conteinerLevel{
+        width: 90vw;
+        height: 1.4em;
+        padding: .4em;
+        margin: .5em;
+        margin-bottom: .6em;
+    }
+    .conteinerLevel .level{
+        height: 1.4em;
+        width: 85vw;
+        margin-right: .7em;
+    }
+    .conteinerLevel .icon {
+        margin-right: .7em;
+        width: 1.4em;
+        height: 1.4em;
+    }
+    .levelOrange{
+        height: 1.4em;
+        display: flex;
+        
+    }
+    .porcent {
+        display: flex;
+        font-size: .7em;
+        font-weight: 600;
+        font-family: "Rubik", sans-serif;    
+    }
+    .nameApp{
+        font-size: .9em;
+        font-weight: 400;
+        font-family: "Rubik", sans-serif;
+    }
+    
+  }
