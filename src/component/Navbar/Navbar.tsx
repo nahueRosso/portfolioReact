@@ -1,11 +1,11 @@
 import "./Navbar.css";
 import { BsMoonStarsFill, BsSunFill, BsList } from "react-icons/bs";
 import "../../media.css";
-import { useState, useRef } from "react";
+import { useState, useRef, ReactElement, MutableRefObject, ClassAttributes, RefObject } from "react";
 
 const Navbar = () => {
-  const refDeployed: any = useRef();
-  const btnRef: any = useRef();  
+  const refDeployed:any = useRef();
+  const btnRef:any = useRef();  
 
   const btnDeployed = () => {
     if (window.matchMedia("(max-width: 935px)").matches) {
