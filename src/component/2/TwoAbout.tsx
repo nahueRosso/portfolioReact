@@ -1,16 +1,24 @@
-import "./About.css";
+import "../../styles/About.css";
 import imgAbout from "../../assets/instagram.png";
 import trazo from "../../assets/trazo.svg";
 import trazoBottom from "../../assets/trazo-bottom.svg";
+import { trazosvg,trazoBattomsvg } from "../Svg";
+
+
 
 const About = () => {
+
+
+
+
   return (
     <>
-      <img className="svgBlack" src={trazo} alt="" />
-      <div className="container-Abaut">
         <img className="imgAbaut" src={imgAbout} alt="" />
+     
+        {trazosvg() }
         <section className="textAbaut">
-          <h3>About Me</h3>
+          
+          <h3>Abaut me</h3>
           <h4>
             I am a full stack web developer & designer from Argentina. I
             specialize in creating clean and high converting user experiences
@@ -29,8 +37,8 @@ const About = () => {
             <br />
           </h4>
         </section>
-      </div>
-      <img className="svgBottom" src={trazoBottom} />
+        {trazoBattomsvg()}
+      {/* <img className="svgBottom" src={trazoBottom} /> */}
     </>
   );
 };

@@ -5,6 +5,7 @@
     margin-top: -4em;
     height: 2.5em;
     display: flex;
+    padding: 1em 0em 1em 0em;
     justify-content: space-between;
   }
   
@@ -18,7 +19,7 @@
   }
   
   .social > ul li{
-    color: #f5f5f5;
+    /* color: #f5f5f5; */
     font-size: 1.2em;
     font-family: "Rubik", sans-serif;
     margin-right: 0em;
@@ -27,18 +28,15 @@
   
   .social > ul a{
     text-decoration: none;
-    color: #f5f5f5;
+    /* color: #f5f5f5; */
     margin: 0;
   }
 
-  .social a:hover{
-    fill: red;
-  }
   
   @media only screen and (min-width: 935px) {
     .social{
       width: calc(100vw - 9em);
-      margin-top: -5.5em;
+      margin-top: -7.5em;
     }
     .social > ul {
       justify-content: end;

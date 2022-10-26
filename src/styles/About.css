@@ -1,0 +1,121 @@
+.container-Abaut {
+  position: relative;
+  left: 0px;
+  background-color: #000;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svgBlack {
+  position: absolute;
+  /* height: 8em; */
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+}
+.svgBottom {
+  position: absolute;
+  width: 100vw;
+  left: 0px;
+  /* height: 8em; */
+  /* top: 150vh; */
+  bottom: 0px;
+}
+
+.imgAbaut {
+  height: 80vh;
+  z-index: -1;
+  position: absolute;
+}
+
+.textAbaut {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 20%);
+}
+
+
+
+.textAbaut h3  {
+  align-self: center;
+  font-size: 2em;
+  padding-bottom: 1em;
+  color: #f5f5f5;
+  font-family: "Rubik", sans-serif;    
+}
+
+.textAbaut h4{
+  text-align: center;
+  align-self: center;
+  font-size: 1.3em;
+  color: #595961; 
+  font-family: "Rubik", sans-serif;    
+}
+
+
+
+@media only screen and (min-width: 935px) {
+  .svgBlack {
+    z-index: -1;
+    position: absolute;
+    width: 1250px;
+    top: 0px;
+    /* height: 10em; */
+    /* top: calc(100vh + 7em); */
+    left: calc(50% - 625px);
+  }
+
+  .svgBottom {
+    z-index: -1;
+    position: absolute;
+    width: 1250px;
+    /* height: 10em; */
+    bottom: 0px;
+    /* top: calc(100vh - 10em); */
+    left: calc(50% - 625px);
+  }
+
+  .container-Abaut {
+    position: relative;
+    left: calc(50% - 625px);
+    background-color: #000;
+    z-index: -2;
+    width: 1250px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .imgAbaut {
+    left: calc(50% - 625px + 15%);
+    margin-bottom: 7em;
+
+    height: 500px;
+  }
+
+
+  .textAbaut { 
+    width: 1250px;
+    left: calc(50% - 625px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textAbaut h3 {
+    width: 40%;
+    align-self: end;
+  }
+  .textAbaut h4{
+    width: 40%;
+    align-self: end;
+    padding-right: 15%;  
+  }
+}

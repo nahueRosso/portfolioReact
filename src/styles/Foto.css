@@ -19,26 +19,29 @@
 
 .content{
     z-index: 10;
-    position:absolute;
-    right: calc(50vw - 7em);
-    top: calc(50% - 6em);
-    margin-top: 0em;
 }
 
 @media only screen and (min-width: 935px) {
-    .content{
-        right: 10%;
-        top: calc(50% - 12em);
-        margin-top:2em ;
-    }
+    .imageContent {
+    width: 17em;
+    height: 17em;
+  }
+  .imagen {
+    width: 16em;
+    height: 16em;
+  }
+  .content {
+    margin-right: 6em;
+  align-self: end;
+  margin-bottom: 8em;
+  }
+ 
 }
 
 @media only screen and (min-height: 680px) {
-     .content{
-        top: calc(50% - 8em);
-        
-         right: calc(50vw - 8.5em);
-     }
+     /* .content{
+    align-self: flex-start; 
+    } */
     .imageContent{
       width: 14em;
       height: 14em;

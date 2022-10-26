@@ -1,38 +1,65 @@
-.App{
-    overflow: hidden;
-    height: 100vh;
+.backg{
+    background-color: #212124;
     width: 100vw;
-    background-color: #18181b;
-    padding: 0;
-    margin-left: 0em;
-}
-
-
-
-.barra{
+    height: 400vh;
     position: absolute;
-    background-color: #313136;
-    top: calc(50% + 1.75em) ;
-    height: 1.5em;
-    left: 0px;
-    border-top: .3em solid #f5f5f5;
-    border-bottom: .3em solid #f5f5f5;
-    width: 100vw;
-    z-index: 1;
-    animation-name: barra;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-timing-function:  cubic-bezier(0,0,1,1);
+    z-index: -100;
 }
 
-@keyframes barra {
-    0%{width: 0%;
-        }
-    100%{width: 1250px;}
+.box{
+    position: relative;
+    left:0px;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+
+.box.home{
+    height: calc( 100vh - 5em);
+    background-color: #18181b;
+z-index: 0;
+}
+
+.box.about{
+background-color: #000;
+display: flex;
+z-index: 0;
+}
+
+.box.technology{
+    z-index: 10;
+    background-color: #18181b;
+
+}
+
+.box.proyects{
+    z-index: 0;
+    background-color: #000;
+}
+
 
 @media only screen and (min-width: 935px) {
-    .barra{
-        top: calc(50% - 0.75em) ;
-    }
+    
+    .box{
+    position: relative;
+    z-index: -2;
+    width: 100vw;
+    display: flex;
+    align-items: center;
 }
+}
+@media only screen and (min-width: 1250px) {
+    
+    .box{
+        
+    left: calc(50% - 625px);
+    width: 1250px;
+}
+}
+

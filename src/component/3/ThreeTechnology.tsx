@@ -1,6 +1,6 @@
-import "./Technology.css";
-import {useState} from 'react'
-import Potentiometer from "./Level";
+import "../../styles/Technology.css";
+import {useState, useContext} from 'react'
+import Potentiometer from "./ThreeLevel";
 import {
   SiAdobeillustrator,
   SiAdobephotoshop,
@@ -16,25 +16,27 @@ import {
   SiPython,
   SiReact,
 } from "react-icons/si";
+import {ThemeContext} from '../../App'
 
 const Technology = () => {
+  const theme:any = useContext(ThemeContext)
 
-  const [objet,getObject] = useState<object>({fontSize:"0.9em"})
+  const [objet,getObject] = useState<object>({fontSize:"0.9em",fill:theme.oneColor})
 
   window.onresize = resize;
 
   function resize(e: any) {
-    e.target.innerWidth < 935?getObject({fontSize:"0.9em"}):getObject({fontSize:"1.4em"})
+    e.target.innerWidth < 935?getObject({fontSize:"0.9em",fill:theme.sixColor}):getObject({fontSize:"1.4em",fill:theme.sixColor})
   }
   
 
   return (
-    <div className="container-Technology">
-      <h3 >Technologies</h3>
-      <h4>
+    <>
+      <h3 className="text-technology" style={{color:theme.sevenColor}}>Technologies</h3>
+      <h4 className="text-technology" style={{color:theme.fiveColor}}>
         These are some of the technologies that best suit my way of working.
       </h4>
-      <section>
+      <section >
         <Potentiometer
           icon={<SiHtml5 style={objet} />}
           name={"Html"}
@@ -101,7 +103,7 @@ const Technology = () => {
           porcent={90}
         />
       </section>
-    </div>
+    </>
   );
 };
 
