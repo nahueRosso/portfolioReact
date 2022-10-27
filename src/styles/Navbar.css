@@ -204,12 +204,10 @@
   }
 
   .navbar.clon-activate {
-    /* display: none; */
     position: fixed;
     z-index: 1000;
     margin-top: 2em ;
     left: calc(50vw - 23.5em);
-    border: .3em solid #18181b;
   }
 
   .navbar a:hover {

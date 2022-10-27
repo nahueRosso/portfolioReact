@@ -21,12 +21,12 @@ import {ThemeContext} from '../../App'
 const Technology = () => {
   const theme:any = useContext(ThemeContext)
 
-  const [objet,getObject] = useState<object>({fontSize:"0.9em",fill:theme.oneColor})
+  const [objet,getObject] = useState<string>("0.9em")
 
   window.onresize = resize;
 
   function resize(e: any) {
-    e.target.innerWidth < 935?getObject({fontSize:"0.9em",fill:theme.sixColor}):getObject({fontSize:"1.4em",fill:theme.sixColor})
+    e.target.innerWidth < 935?getObject("0.9em"):getObject("1.4em")
   }
   
 
@@ -38,67 +38,67 @@ const Technology = () => {
       </h4>
       <section >
         <Potentiometer
-          icon={<SiHtml5 style={objet} />}
+          icon={<SiHtml5 style={{fontSize:`${objet}`,color:theme.oneColor}} />}
           name={"Html"}
           porcent={95}
         />
         <Potentiometer
-          icon={<SiCss3 style={objet} />}
+          icon={<SiCss3 style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Css"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiJavascript style={objet} />}
+          icon={<SiJavascript style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"JavaScript"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiReact style={objet} />}
+          icon={<SiReact style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"React"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiExpress style={objet} />}
+          icon={<SiExpress style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Express JS"}
           porcent={85}
         />
         <Potentiometer
-          icon={<SiNodedotjs style={objet} />}
+          icon={<SiNodedotjs style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Node JS"}
           porcent={85}
         />
         <Potentiometer
-          icon={<SiPython style={objet} />}
+          icon={<SiPython style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Python"}
           porcent={75}
         />
         <Potentiometer
-          icon={<SiMysql style={objet} />}
+          icon={<SiMysql style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Sql"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiMongodb style={objet} />}
+          icon={<SiMongodb style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Mongo db"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiAdobeillustrator style={objet} />}
+          icon={<SiAdobeillustrator style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Illustrator"}
           porcent={85}
         />
         <Potentiometer
-          icon={<SiAdobephotoshop style={objet} />}
+          icon={<SiAdobephotoshop style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Photoshop"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiAdobepremierepro style={objet} />}
+          icon={<SiAdobepremierepro style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"Premier Pro"}
           porcent={90}
         />
         <Potentiometer
-          icon={<SiAdobexd style={objet} />}
+          icon={<SiAdobexd style={{fontSize:`${objet}`,color:theme.oneColor}}  />}
           name={"XD"}
           porcent={90}
         />

@@ -4,7 +4,7 @@ import { useRef, useState, useContext } from "react";
 import { ThemeContext } from '../App'
 import { hexRgb } from "../funcion"
 
-const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFiveColor, setSixColor, setSevenColor }: any) => {
+const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColor, setFiveColor, setSixColor, setSevenColor }: any) => {
   const refDeployed: any = useRef();
   const btnRef: any = useRef();
   const NavbarCRef: any = useRef();
@@ -28,8 +28,28 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
 
   const btnLight = () => {
     btnRef.current.classList.toggle("light");
-    console.log("holis")
+    if (oneColor !== "#000000") {
+      setOneColor("#000000")
+      setTwoColor("#18181b")
+      setThreeColor("#212124")
+      setFourColor("#313136")
+      setFiveColor("#595961")
+      setSixColor("#f0a020")
+      setSevenColor("#f5f5f5")
+    } else {
+      setOneColor("#919198")
+      setTwoColor("#999995")
+      setThreeColor("#aaaaaa")
+      setFourColor("#888888")
+      setFiveColor("#232328")
+      setSixColor("#0d0d5f")
+      setSevenColor("#000000")
+    }
   };
+
+  if (window.matchMedia("(max-width: 935px)").matches) {
+    setTimeout(() => { NavbarCRef.current.style.border = `.3em solid #${(theme.twoColor)}` }, 1000)
+  }
 
 
   document.addEventListener('scroll', (e) => {
@@ -64,7 +84,8 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
     btnRef.current.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
   }
 
-  
+
+
   return (
     <>
       <div ref={NavbarCRef} onClick={btnDeployed} className="navbar clon-activate" style={{ backgroundColor: theme.fourColor }}>
@@ -76,41 +97,41 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
           <div className="deployed" style={{ backgroundColor: theme.sixColor }}>
             <li className="iconNav">
               <a href="#aboutID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.twoColor)
-                  NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.sevenColor)
-                  NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
-                }}
-                >About me</a>
+                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.twoColor)
+                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
+              }} onMouseOut={() => {
+                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.sevenColor)
+                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = "transparent"
+              }}
+              >About me</a>
             </li>
             <li className="iconNav">
               <a href="#technologyID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.twoColor)
-                  NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
-                  NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
-                }}
+                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.twoColor)
+                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
+              }} onMouseOut={() => {
+                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
+                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = "transparent"
+              }}
               >Technologies</a>
             </li>
             <li className="iconNav">
               <a href="#proyectsID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.twoColor)
-                  NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.sevenColor)
-                  NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
-                }}>Projects</a>
+                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.twoColor)
+                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
+              }} onMouseOut={() => {
+                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.sevenColor)
+                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = "transparent"
+              }}>Projects</a>
             </li>
             <li className="iconNav" id="lastIconNav">
               <a href="#" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.twoColor)
-                  NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.sevenColor)
-                  NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
-                }}>Contact</a>
+                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.twoColor)
+                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
+              }} onMouseOut={() => {
+                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.sevenColor)
+                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = "transparent"
+              }}>Contact</a>
             </li>
           </div>
         </ul>
@@ -129,9 +150,9 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
                   refDeployed.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
                 }} onMouseOut={() => {
                   refDeployed.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
+                  refDeployed.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = "transparent"
                 }}>
-                  About me</a>
+                  About me </a>
               </li>
               <li className="iconNav">
                 <a href="#technologyID" style={{ color: theme.sevenColor }} onMouseOver={() => {
@@ -139,7 +160,7 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
                   refDeployed.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
                 }} onMouseOut={() => {
                   refDeployed.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
+                  refDeployed.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = "transparent"
                 }}>Technologies</a>
               </li>
               <li className="iconNav">
@@ -148,7 +169,7 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
                   refDeployed.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
                 }} onMouseOut={() => {
                   refDeployed.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
+                  refDeployed.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = "transparent"
                 }}>Projects</a>
               </li>
               <li className="iconNav" id="lastIconNav">
@@ -157,7 +178,7 @@ const Navbar = ({ setOneColor, setTwoColor, setThreeColor, setFourColor, setFive
                   refDeployed.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
                 }} onMouseOut={() => {
                   refDeployed.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.fourColor)
+                  refDeployed.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = "transparent"
                 }}>Contact</a>
               </li>
             </div>

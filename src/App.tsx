@@ -18,24 +18,24 @@ function App() {
   // const [sixColor, setSixColor] = useState("rgb(255, 170, 34)")
   // const [sevenColor, setSevenColor] = useState("rgb(245, 245, 245)")
 
-  const [oneColor, setOneColor] = useState("#912345")
-  const [twoColor, setTwoColor] = useState("#555642")
-  const [threeColor, setThreeColor] = useState("#913452")
-  const [fourColor, setFourColor] = useState("#af9102")
-  const [fiveColor, setFiveColor] = useState("#9384ab")
-  const [sixColor, setSixColor] = useState("#abc902")
-  const [sevenColor, setSevenColor] = useState("#934abc")
+  // const [oneColor, setOneColor] = useState("#912345")
+  // const [twoColor, setTwoColor] = useState("#555642")
+  // const [threeColor, setThreeColor] = useState("#913452")
+  // const [fourColor, setFourColor] = useState("#af9102")
+  // const [fiveColor, setFiveColor] = useState("#9384ab")
+  // const [sixColor, setSixColor] = useState("#abc902")
+  // const [sevenColor, setSevenColor] = useState("#934abc")
 
-  // const [oneColor, setOneColor] = useState("#000000")
-  // const [twoColor, setTwoColor] = useState("#18181b")
-  // const [threeColor, setThreeColor] = useState("#212124")
-  // const [fourColor, setFourColor] = useState("#313136")
-  // const [fiveColor, setFiveColor] = useState("#595961")
-  // const [sixColor, setSixColor] = useState("#f0a020")
-  // const [sevenColor, setSevenColor] = useState("#f5f5f5")
+  const [oneColor, setOneColor] = useState("#000000")
+  const [twoColor, setTwoColor] = useState("#18181b")
+  const [threeColor, setThreeColor] = useState("#212124")
+  const [fourColor, setFourColor] = useState("#313136")
+  const [fiveColor, setFiveColor] = useState("#595961")
+  const [sixColor, setSixColor] = useState("#f0a020")
+  const [sevenColor, setSevenColor] = useState("#f5f5f5")
 
   
-  const objetThemes: { oneColor: string, twoColor: string, threeColor: string, fourColor: string, fiveColor: string, sixColor: string, sevenColor: string, } = {
+  const objetThemes: any = {
     oneColor: oneColor,
     twoColor: twoColor,
     threeColor: threeColor,
@@ -45,20 +45,20 @@ function App() {
     sevenColor: sevenColor
   }
   
-  const [gState,setGState] = useState<any>(objetThemes)
+  // const [gState,setGState] = useState<any>(objetThemes)
 
   return (
     <>
-      <ThemeContext.Provider value={gState}>
+      <ThemeContext.Provider value={objetThemes}>
         {/* <h1>{`Hello ${gState.oneColor}!`}</h1> */}
 
 
-        <div className="backg" style={{backgroundColor:gState.threeColor}}/>
-        <Navbar setOneColor={setOneColor} setTwoColor={setTwoColor} setThreeColor={setThreeColor} setFourColor={setFourColor} setFiveColor={setFiveColor} setSixColor={setSixColor} setSevenColor={setSevenColor} />
-        <div id="" className="box home" style={{backgroundColor:gState.twoColor}} ><Home /></div>
+        <div className="backg" style={{backgroundColor:objetThemes.threeColor}}/>
+        <Navbar oneColor={oneColor} setOneColor={setOneColor} setTwoColor={setTwoColor} setThreeColor={setThreeColor} setFourColor={setFourColor} setFiveColor={setFiveColor} setSixColor={setSixColor} setSevenColor={setSevenColor} />
+        <div id="" className="box home" style={{backgroundColor:objetThemes.twoColor}} ><Home /></div>
         <div id="aboutID" className="box about" ><About /></div>
-        <div id="technologyID" className="box technology" style={{backgroundColor:gState.twoColor}} ><Technology /></div>
-        <div id="proyectsID" className="box proyects" style={{backgroundColor:gState.oneColor}} ><Proyects /></div>
+        <div id="technologyID" className="box technology" style={{backgroundColor:objetThemes.twoColor}} ><Technology /></div>
+        <div id="proyectsID" className="box proyects" style={{backgroundColor:objetThemes.oneColor}} ><Proyects /></div>
       </ThemeContext.Provider>
     </>
   );
