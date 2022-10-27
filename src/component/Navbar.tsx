@@ -1,4 +1,5 @@
 import "../styles/Navbar.css";
+import allgo from "../styles/Navbar.css";
 import { BsMoonStarsFill, BsSunFill, BsList } from "react-icons/bs";
 import { useRef, useState, useContext } from "react";
 import { ThemeContext } from '../App'
@@ -89,7 +90,9 @@ const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColo
   return (
     <>
       <div ref={NavbarCRef} onClick={btnDeployed} className="navbar clon-activate" style={{ backgroundColor: theme.fourColor }}>
-        <div className="capa" />
+        <div className="capa" onMouseOver={() => { { NavbarCRef.current.firstChild.style.backgroundColor = hexRgb(theme.sixColor) } }} onMouseOut={() => {
+          NavbarCRef.current.firstChild.style.backgroundColor = hexRgb(theme.fourColor)
+        }} />
         <ul>
           <li className="list">
             <BsList style={{ color: theme.sevenColor, fontSize: "1.5em" }} />
@@ -138,7 +141,20 @@ const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColo
       </div>
       <div className="header" style={{ background: theme.twoColor }}>
         <div ref={refDeployed} onClick={btnDeployed} className="navbar" style={{ backgroundColor: theme.fourColor }}>
-          <div className="capa" />
+          <div className="capa" onMouseOver={() => {
+            {
+              refDeployed.current.style.backgroundColor = hexRgb(theme.sixColor)
+              refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.twoColor)
+            }
+          }} onMouseOut={() => {
+            refDeployed.current.style.backgroundColor = hexRgb(theme.fourColor)
+              refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.sevenColor)
+              // refDeployed.current.children[1].firstChild.firstChild.style.zIndex = 10000
+              console.log(refDeployed.current.firstChild.style.backgroundColor);
+              console.log(hexRgb(theme.sevenColor));
+              console.log(refDeployed.current.children[1].firstChild.firstChild.style.color);
+            // refDeployed.current.children[1].firstChild.firstChild.style.color  = hexRgb(theme.sevenColor)
+          }} />
           <ul>
             <li className="list">
               <BsList style={{ color: theme.sevenColor, fontSize: "1.5em" }} />

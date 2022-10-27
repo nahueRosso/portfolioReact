@@ -15,7 +15,8 @@
   display: flex;
   /* margin: 2em ; */
   border-radius: 3em 3em 3em 3em;
-  transition: border-radius 500ms 1900ms, background-color 500ms 1900ms;
+  transition: border-radius 500ms 1900ms;
+  /* background-color 500ms 1900ms; */
   /* position: fixed; */
 }
 
@@ -53,7 +54,7 @@
 }
 
 .navbar.active .iconNav:hover {
-  background-color: rgba(179, 134, 62, 0.516);
+  /* background-color: rgba(179, 134, 62, 0.516); */
   color: #171718;
   z-index: 3em;
 }
@@ -75,6 +76,10 @@
   width: 100vw;
 
   justify-content: end;
+}
+
+.listIcon{
+  z-index: 100000;
 }
 
 .moon {
@@ -115,7 +120,7 @@
 .moon:hover,
 .sun:hover,
 .navbar:hover {
-  background-color: #b3863e84;
+  /* background-color: #b3863e84; */
 }
 
 .list {
@@ -177,7 +182,8 @@
   transition: display 0s 10s;
 }
 .capa:hover {
-  background-color:#b3863e84 ;
+  /* background-color:#b3863e84 ; */
+  cursor: pointer;
   
 }
 
