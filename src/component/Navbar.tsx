@@ -1,11 +1,11 @@
 import "../styles/Navbar.css";
-import allgo from "../styles/Navbar.css";
+
 import { BsMoonStarsFill, BsSunFill, BsList } from "react-icons/bs";
 import { useRef, useState, useContext } from "react";
 import { ThemeContext } from '../App'
 import { hexRgb } from "../funcion"
 
-const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColor, setFiveColor, setSixColor, setSevenColor }: any) => {
+const Navbar = ({setContactTop, refContact, oneColor, setOneColor, setTwoColor, setThreeColor, setFourColor, setFiveColor, setSixColor, setSevenColor }: any) => {
   const refDeployed: any = useRef();
   const btnRef: any = useRef();
   const NavbarCRef: any = useRef();
@@ -20,11 +20,15 @@ const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColo
     if (window.matchMedia("(max-width: 935px)").matches) {
       refDeployed.current.classList.toggle("active");
       NavbarCRef.current.classList.toggle("active");
+
       setTimeout(() => {
         refDeployed.current.classList.toggle("activeIcon");
         NavbarCRef.current.classList.toggle("activeIcon");
       }, 1000);
     }
+
+
+
   };
 
   const btnLight = () => {
@@ -61,11 +65,26 @@ const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColo
       NavbarCRef.current.style.opacity = 1
       NavbarCRef.current.style.transform = "translateY(0em)"
 
-
+      refDeployed.current.classList.toggle("active",false);
+      NavbarCRef.current.classList.toggle("active",false);
+      setTimeout(() => {
+        refDeployed.current.classList.toggle("activeIcon",false);
+        NavbarCRef.current.classList.toggle("activeIcon",false);
+      }, 1000);
+      
     } else {
 
       NavbarCRef.current.style.transform = "translateY(-5em)"
       NavbarCRef.current.style.opacity = 0
+
+      refDeployed.current.classList.toggle("active",false);
+      NavbarCRef.current.classList.toggle("active",false);
+      setTimeout(() => {
+        refDeployed.current.classList.toggle("activeIcon",false);
+        NavbarCRef.current.classList.toggle("activeIcon",false);
+      }, 1000);
+      // NavbarCRef.current.lastChild.lastChild.style.transition = "none";
+      // refDeployed.current.lastChild.lastChild.style.transition = "none";
 
     }
 
@@ -85,117 +104,101 @@ const Navbar = ({ oneColor, setOneColor, setTwoColor, setThreeColor, setFourColo
     btnRef.current.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
   }
 
+  const mauseOverList = () => {
+    NavbarCRef.current.style.backgroundColor = hexRgb(theme.sixColor)
+    refDeployed.current.style.backgroundColor = hexRgb(theme.sixColor)
+    NavbarCRef.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.twoColor)
+    refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.twoColor)
+    if (NavbarCRef.current.classList[2] === "active" || refDeployed.current.classList[2] === "active") {
+      NavbarCRef.current.style.backgroundColor = hexRgb(theme.fourColor)
+      refDeployed.current.style.backgroundColor = hexRgb(theme.fourColor)
+      NavbarCRef.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.sevenColor)
+      refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.sevenColor)
+    }
+  }
+  const mauseOutList = () => {
+    NavbarCRef.current.style.backgroundColor = hexRgb(theme.fourColor)
+    refDeployed.current.style.backgroundColor = hexRgb(theme.fourColor)
+    NavbarCRef.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.sevenColor)
+    refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.sevenColor)
+  }
 
+  const prueba = (parametro: any, parametro2: any) => {
+    if (!window.matchMedia("(max-width: 935px)").matches) {
+      parametro2.current.lastChild.lastChild.children[parametro].firstChild.style.color = hexRgb(theme.twoColor)
+      parametro2.current.lastChild.lastChild.children[parametro].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
+    }else{
+      parametro2.current.lastChild.lastChild.children[parametro].firstChild.style.color = hexRgb(theme.sixColor)
+    }
+  }
+
+  const prueba2 = (parametro: any, parametro2: any) => {
+    if (!window.matchMedia("(max-width: 935px)").matches) {
+      parametro2.current.lastChild.lastChild.children[parametro].firstChild.style.color = hexRgb(theme.sevenColor)
+      parametro2.current.lastChild.lastChild.children[parametro].firstChild.style.backgroundColor = "transparent"
+      
+    }else{
+      parametro2.current.lastChild.lastChild.children[parametro].firstChild.style.color = hexRgb(theme.sevenColor)
+      // NavbarCRef.current.lastChild.lastChild.style.transition = "none";
+      // refDeployed.current.lastChild.lastChild.style.transition = "none";
+      // NavbarCRef.current.style.transition = "none";
+      // refDeployed.current.style.transition = "none";
+    }
+  }
+
+
+  const contact = () =>{
+    setContactTop(refContact.current.style.top = "0px")
+    
+   
+  }  
 
   return (
     <>
       <div ref={NavbarCRef} onClick={btnDeployed} className="navbar clon-activate" style={{ backgroundColor: theme.fourColor }}>
-        <div className="capa" onMouseOver={() => { { NavbarCRef.current.firstChild.style.backgroundColor = hexRgb(theme.sixColor) } }} onMouseOut={() => {
-          NavbarCRef.current.firstChild.style.backgroundColor = hexRgb(theme.fourColor)
-        }} />
+        <div className="capa" onMouseOver={mauseOverList} onMouseOut={mauseOutList} />
         <ul>
           <li className="list">
             <BsList style={{ color: theme.sevenColor, fontSize: "1.5em" }} />
           </li>
-          <div className="deployed" style={{ backgroundColor: theme.sixColor }}>
+          <div className="deployed" style={{ backgroundColor: theme.fourColor }}>
             <li className="iconNav">
-              <a href="#aboutID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.twoColor)
-                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-              }} onMouseOut={() => {
-                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.sevenColor)
-                NavbarCRef.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = "transparent"
-              }}
+              <a href="#aboutID" style={{ color: theme.sevenColor }} onMouseOver={() => prueba(0, NavbarCRef)} onMouseOut={() => prueba2(0, NavbarCRef)}
               >About me</a>
             </li>
             <li className="iconNav">
-              <a href="#technologyID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.twoColor)
-                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-              }} onMouseOut={() => {
-                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
-                NavbarCRef.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = "transparent"
-              }}
+              <a href="#technologyID" style={{ color: theme.sevenColor }} onMouseOver={() => prueba(1, NavbarCRef)} onMouseOut={() => prueba2(1, NavbarCRef)}
               >Technologies</a>
             </li>
             <li className="iconNav">
-              <a href="#proyectsID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.twoColor)
-                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-              }} onMouseOut={() => {
-                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.sevenColor)
-                NavbarCRef.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = "transparent"
-              }}>Projects</a>
+              <a href="#proyectsID" style={{ color: theme.sevenColor }} onMouseOver={() => prueba(2, NavbarCRef)} onMouseOut={() => prueba2(2, NavbarCRef)}>Projects</a>
             </li>
             <li className="iconNav" id="lastIconNav">
-              <a href="#" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.twoColor)
-                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-              }} onMouseOut={() => {
-                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.sevenColor)
-                NavbarCRef.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = "transparent"
-              }}>Contact</a>
+              <a onClick={contact} style={{ color: theme.sevenColor }} onMouseOver={() => prueba(3, NavbarCRef)} onMouseOut={() => prueba2(3, NavbarCRef)}>Contact</a>
             </li>
           </div>
         </ul>
       </div>
       <div className="header" style={{ background: theme.twoColor }}>
         <div ref={refDeployed} onClick={btnDeployed} className="navbar" style={{ backgroundColor: theme.fourColor }}>
-          <div className="capa" onMouseOver={() => {
-            {
-              refDeployed.current.style.backgroundColor = hexRgb(theme.sixColor)
-              refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.twoColor)
-            }
-          }} onMouseOut={() => {
-            refDeployed.current.style.backgroundColor = hexRgb(theme.fourColor)
-              refDeployed.current.children[1].firstChild.firstChild.style.color = hexRgb(theme.sevenColor)
-              // refDeployed.current.children[1].firstChild.firstChild.style.zIndex = 10000
-              console.log(refDeployed.current.firstChild.style.backgroundColor);
-              console.log(hexRgb(theme.sevenColor));
-              console.log(refDeployed.current.children[1].firstChild.firstChild.style.color);
-            // refDeployed.current.children[1].firstChild.firstChild.style.color  = hexRgb(theme.sevenColor)
-          }} />
+          <div className="capa" onMouseOver={mauseOverList} onMouseOut={mauseOutList} />
           <ul>
             <li className="list">
               <BsList style={{ color: theme.sevenColor, fontSize: "1.5em" }} />
             </li>
-            <div className="deployed" style={{ backgroundColor: theme.sixColor }}>
+            <div className="deployed" style={{ backgroundColor: theme.fourColor,zIndex:"10000" }}>
               <li className="iconNav">
-                <a href="#aboutID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  refDeployed.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.twoColor)
-                  refDeployed.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  refDeployed.current.lastChild.lastChild.children[0].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[0].firstChild.style.backgroundColor = "transparent"
-                }}>
+                <a href="#aboutID" style={{ color: theme.sevenColor }} onMouseOver={() => prueba(0, refDeployed)} onMouseOut={() => prueba2(0, refDeployed)}>
                   About me </a>
               </li>
               <li className="iconNav">
-                <a href="#technologyID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  refDeployed.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.twoColor)
-                  refDeployed.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  refDeployed.current.lastChild.lastChild.children[1].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[1].firstChild.style.backgroundColor = "transparent"
-                }}>Technologies</a>
+                <a href="#technologyID" style={{ color: theme.sevenColor }} onMouseOver={() => prueba(1, refDeployed)} onMouseOut={() => prueba2(1, refDeployed)}>Technologies</a>
               </li>
               <li className="iconNav">
-                <a href="#proyectsID" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  refDeployed.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.twoColor)
-                  refDeployed.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  refDeployed.current.lastChild.lastChild.children[2].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[2].firstChild.style.backgroundColor = "transparent"
-                }}>Projects</a>
+                <a href="#proyectsID" style={{ color: theme.sevenColor }} onMouseOver={() => prueba(2, refDeployed)} onMouseOut={() => prueba2(2, refDeployed)}>Projects</a>
               </li>
               <li className="iconNav" id="lastIconNav">
-                <a href="#" style={{ color: theme.sevenColor }} onMouseOver={() => {
-                  refDeployed.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.twoColor)
-                  refDeployed.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = hexRgb(theme.sixColor)
-                }} onMouseOut={() => {
-                  refDeployed.current.lastChild.lastChild.children[3].firstChild.style.color = hexRgb(theme.sevenColor)
-                  refDeployed.current.lastChild.lastChild.children[3].firstChild.style.backgroundColor = "transparent"
-                }}>Contact</a>
+                <a onClick={contact} style={{ color: theme.sevenColor }} onMouseOver={() => prueba(3, refDeployed)} onMouseOut={() => prueba2(3, refDeployed)}>Contact</a>
               </li>
             </div>
           </ul>

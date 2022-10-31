@@ -4,7 +4,8 @@ import Navbar from "./component/Navbar";
 import About from "./component/2/TwoAbout";
 import Technology from "./component/3/ThreeTechnology";
 import Proyects from "./component/4/FourProjects";
-import { useContext, createContext, useState } from "react";
+import Contact from "./component/5/FiveContact";
+import {  createContext, useState ,useRef } from "react";
 
 export const ThemeContext = createContext("");
 
@@ -34,6 +35,8 @@ function App() {
   const [sixColor, setSixColor] = useState("#f0a020")
   const [sevenColor, setSevenColor] = useState("#f5f5f5")
 
+  const [contactTop,setContactTop] = useState<string>("")
+
   
   const objetThemes: any = {
     oneColor: oneColor,
@@ -45,7 +48,7 @@ function App() {
     sevenColor: sevenColor
   }
   
-  // const [gState,setGState] = useState<any>(objetThemes)
+const refContact = useRef<any>()
 
   return (
     <>
@@ -54,11 +57,13 @@ function App() {
 
 
         <div className="backg" style={{backgroundColor:objetThemes.threeColor}}/>
-        <Navbar oneColor={oneColor} setOneColor={setOneColor} setTwoColor={setTwoColor} setThreeColor={setThreeColor} setFourColor={setFourColor} setFiveColor={setFiveColor} setSixColor={setSixColor} setSevenColor={setSevenColor} />
+        <Navbar oneColor={oneColor} setContactTop={setContactTop}  refContact={refContact} setOneColor={setOneColor} setTwoColor={setTwoColor} setThreeColor={setThreeColor} setFourColor={setFourColor} setFiveColor={setFiveColor} setSixColor={setSixColor} setSevenColor={setSevenColor} />
         <div id="" className="box home" style={{backgroundColor:objetThemes.twoColor}} ><Home /></div>
         <div id="aboutID" className="box about" ><About /></div>
         <div id="technologyID" className="box technology" style={{backgroundColor:objetThemes.twoColor}} ><Technology /></div>
-        <div id="proyectsID" className="box proyects" style={{backgroundColor:objetThemes.oneColor}} ><Proyects /></div>
+        <div id="proyectsID" className="box proyects"  style={{backgroundColor:objetThemes.oneColor}} ><Proyects /></div>
+        <div id="ContactID" ref={refContact}   className="box contact"   style={{backgroundColor:`${objetThemes.oneColor}bb`}} ><Contact setContactTop={setContactTop} reference={refContact} /></div>
+
       </ThemeContext.Provider>
     </>
   );

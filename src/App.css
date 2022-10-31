@@ -43,6 +43,14 @@ z-index: 0;
     background-color: #000;
 }
 
+.box.contact{
+    position: fixed ;
+    z-index: 10000;
+}
+
+h1,h2,h3,h4,h5,h6,a{
+    user-select: none;
+}
 
 @media only screen and (min-width: 935px) {
     
@@ -53,6 +61,12 @@ z-index: 0;
     display: flex;
     align-items: center;
 }
+.box.contact{
+    transition: 500ms;
+    top:400vh;
+    /* flex-direction: column; */
+    position: fixed ;
+}
 }
 @media only screen and (min-width: 1250px) {
     
@@ -61,5 +75,6 @@ z-index: 0;
     left: calc(50% - 625px);
     width: 1250px;
 }
+
 }
 

@@ -1,15 +1,26 @@
 import "../../styles/Level.css";
-import { useContext,useRef, createContext } from "react";
+import { useContext,useRef, createContext, useState } from "react";
 import {ThemeContext} from '../../App'
 
 const Level = ({ icon, porcent, name }: any) => {
   const theme:any = useContext(ThemeContext)
 
-  let objet;
+  
+  let [objet,setObjet]=useState({});
+  let [transitionLevel,setTransitionLevel ]= useState("width 4s")
 
-  if (window.matchMedia("(max-width: 935px)").matches) {
-     objet = { width: `calc(80vw * 0.${porcent})`,backgroundColor:theme.sixColor }
-  }else{ objet = { width: `calc(45em * 0.${porcent})`,backgroundColor:theme.sixColor }}
+  document.addEventListener("scroll",()=>{
+    if(window.pageYOffset > (window.innerHeight * 1.1)){
+      if(  window.matchMedia("(max-width: 935px)").matches){
+       setObjet( { width: `calc(80vw * 0.${porcent})`,backgroundColor:theme.sixColor ,trasition:transitionLevel})
+            }else{ setObjet({ width: `calc(45em * 0.${porcent})`,backgroundColor:theme.sixColor,trasition:transitionLevel })}
+      // setTimeout(() => {
+      //   setTransitionLevel("width 0s")
+      // }, 4000);
+    }
+  })
+  // 
+  
   
 
 
