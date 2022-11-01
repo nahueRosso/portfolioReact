@@ -42,7 +42,7 @@ const Redes = () => {
             </a>
           </li>
           <li onMouseOver={()=>fill(3)} onMouseOut={()=>fillL(3)}>
-            <a href="#" >
+            <a href="https://github.com/nahueRosso" >
               <BsGithub  style={styles} />
             </a>
           </li>

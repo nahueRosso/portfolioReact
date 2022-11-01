@@ -12,8 +12,8 @@ const Level = ({ icon, porcent, name }: any) => {
   document.addEventListener("scroll",()=>{
     if(window.pageYOffset > (window.innerHeight * 1.1)){
       if(  window.matchMedia("(max-width: 935px)").matches){
-       setObjet( { width: `calc(80vw * 0.${porcent})`,backgroundColor:theme.sixColor ,trasition:transitionLevel})
-            }else{ setObjet({ width: `calc(45em * 0.${porcent})`,backgroundColor:theme.sixColor,trasition:transitionLevel })}
+       setObjet( { width: `calc(80vw * 0.${porcent})`,backgroundColor:theme.sixColor ,animationName:"hola"})
+            }else{ setObjet({ width: `calc(45em * 0.${porcent})`,backgroundColor:theme.sixColor,animationName:"hola"})}
       // setTimeout(() => {
       //   setTransitionLevel("width 0s")
       // }, 4000);

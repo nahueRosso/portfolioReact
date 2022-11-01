@@ -7,6 +7,14 @@
   font-family: "Rubik", sans-serif;
 }
 
+.container-projects  h4{
+  padding: .5em;
+  font-size: 1.2em;
+  color: #595961; 
+  font-family: "Rubik", sans-serif;    
+  text-align: center;
+}
+
 /* .container-projects h3:hover{
   color: red;
 } */

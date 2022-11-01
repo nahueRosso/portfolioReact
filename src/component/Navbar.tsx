@@ -149,7 +149,6 @@ const Navbar = ({setContactTop, refContact, oneColor, setOneColor, setTwoColor, 
 
   const contact = () =>{
     setContactTop(refContact.current.style.top = "0px")
-    
    
   }  
 

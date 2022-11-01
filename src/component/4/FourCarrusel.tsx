@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect,useContext, useRef } from "react";
 import "../../styles/Carrusel.css";
 import marco from '../../assets/marco.svg'
 import leftArrow from '../../assets/leftArrow.svg'
@@ -16,9 +16,7 @@ const Carrusel = ({ images }: any) => {
     getImg({transform: `translateX(${count}%)`});
   }, [count]);
 
-  // setInterval(()=>{
-  //   getCount(e => e == 0 ? e = -75 : e + 25)
-  // },5000)
+const refText = useRef<any>()
 
   return (
     <>
@@ -27,11 +25,17 @@ const Carrusel = ({ images }: any) => {
       </button>
       <div className="carrusel">
         <div className="container-imgs">
-          <div className="continuidad" style={img}>
-            {images.map((image:any)=><div className="bkg-img" style={{ backgroundImage: `url(${image})` }} />)}
+          <div className="continuidad" ref={refText} style={img}>
+            {images.map((image:any,i:any)=>
+            <>
+            <div className="bkg-img"  style={{ backgroundImage: `url(${image.img})` }}/>
+            <div id={`box${i}`} style={{backgroundColor:`${theme.threeColor}dd`}}  className="info-project"><h4 style={{color:theme.sevenColor}}>{image.tituloText}</h4><h5 style={{color:theme.sevenColor}}>{image.text}</h5></div>
+            </>
+            )}
+            
           </div>
         </div>
-        {marcosvg()}
+        {marcosvg(refText)}
         {/* <img src={marco} className="carrusel-box" alt="" /> */}
       </div>
       <button className="direction" onClick={() => getCount(e => e == -75 ? e = 0 : e - 25)}>

@@ -21,6 +21,7 @@ const FiveContact = ({ reference, setContactTop }: props) => {
   return (
     <>
       <div onClick={cancelContact} className="boxCancel">
+        <div><a style={{color:theme.sixColor,background:theme.fourColor,borderColor:theme.sixColor}} href="../../assets/EstructurIII.pdf" download>Download CV </a></div>
         <GiCancel className="iconCancel" style={{ color: theme.sixColor, fontSize: "3.2em", background: theme.oneColor, borderRadius: "50%" }} />
       </div>
       <div className="bodyContact">
